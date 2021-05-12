@@ -1,24 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
+import UserService from './api/UserService'
 
 function App() {
+    UserService.getContactList().then((results) => {
+      console.log(results);
+    });
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Contact List
         </p>
+      </header>
+      <main>
+
+      </main>
+      <footer>
+        powered by&nbsp;
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          className="powered-by-link"
+          href="https://randomuser.me/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          RANDOM USER GENERATOR
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
