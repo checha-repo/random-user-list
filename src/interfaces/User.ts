@@ -9,6 +9,7 @@ export interface User {
     cell:       string;
     picture:    Picture;
     nat:        string;
+    id:         ID;
 }
 
 export interface Dob {
@@ -39,4 +40,13 @@ export interface Picture {
     large:     string;
     medium:    string;
     thumbnail: string;
+}
+
+export interface ID {
+    name:  string;
+    value: null;
+}
+
+export interface GroupedContacts {
+    [key: string]: Array<User>;
 }

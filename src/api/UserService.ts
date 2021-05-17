@@ -15,7 +15,7 @@ class UserService {
             params: {
                 results: config.numberCards,
             }
-        }).catch((error) => {
+        }).then(response => response.data).catch((error) => {
             if (error.response) {
                 // Request made and server responded
                 console.log(error.response.data);
@@ -28,7 +28,7 @@ class UserService {
                 // Something happened in setting up the request that triggered an Error
                 console.log('Error', error.message);
               }
-        });
+        })
     }
 }
 
